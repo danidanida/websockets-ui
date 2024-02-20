@@ -1,6 +1,6 @@
 export let users = [];
 
-export function addUser(receivedUser) {
+export function addUser(receivedUser, id) {
     const { data } = receivedUser;
     const { name, password } = JSON.parse(data);
 
@@ -10,6 +10,7 @@ export function addUser(receivedUser) {
         users.push({
             name: name,
             password: password,
+            uuid: id,
         });
 
         return {
