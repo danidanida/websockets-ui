@@ -1,9 +1,9 @@
 import { WebSocketServer, WebSocket } from 'ws';
-import { generateUUID } from '../utils/generateUUID';
+import { generateNumericID } from '../utils/generateUUID';
 import { msgHandler } from '../handlers/msg_handler';
 
 export interface ExtendedWebSocket extends WebSocket {
-  id?: string;
+  id?: number;
 }
 
 export const wss = new WebSocketServer({
@@ -11,7 +11,7 @@ export const wss = new WebSocketServer({
 });
 
 wss.on('connection', function connection(ws: ExtendedWebSocket) {
-  ws.id = generateUUID();
+  ws.id = generateNumericID();
 
   console.log(`connected socket ${ws.id}`);
 
