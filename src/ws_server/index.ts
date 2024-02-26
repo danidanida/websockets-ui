@@ -20,7 +20,7 @@ wss.on('connection', function connection(ws: ExtendedWebSocket) {
       const msg = JSON.parse(message);
       msgHandler(msg, ws);
     } catch (error) {
-      console.error('Failed to parse message:', error);
+      console.error('Error ocurred:', error);
     }
   });
 

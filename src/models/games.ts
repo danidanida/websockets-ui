@@ -1,9 +1,11 @@
+import { ships } from './ships';
+
 interface Game {
     idGame: number;
     idPlayer: number;
 }
 
-let games: Game[] = [];
+export let games: Game[] = [];
 
 interface GameCreationResponse {
     type: string;
@@ -23,4 +25,18 @@ export function createGame(idGame: number, idPlayer: number): GameCreationRespon
         }),
         id: 0,
     };
+}
+
+export function startGame(playerId: number): object {
+    let __ships = ships[playerId];
+
+    return {
+        type: "start_game",
+        data:
+        JSON.stringify({
+            ships: JSON.stringify(__ships),
+            currentPlayerIndex: playerId,
+        }),
+        id: 0,
+    }
 }
