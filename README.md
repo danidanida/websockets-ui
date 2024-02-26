@@ -1,9 +1,10 @@
 # Battleship 
 
-## Assignment(url)[https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/battleship/assignment.md]
+## [Assignment](https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/battleship/assignment.md)
 
 ## Installation
 1. Clone/download repo
+2. go to branch **assignment-ts**
 2. `npm install`
 
 ## Usage
